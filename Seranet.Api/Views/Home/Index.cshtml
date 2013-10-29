@@ -1,24 +1,27 @@
-﻿<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+﻿<div class="jumbotron" style="background-color:#E7753F;">
+    <h1>99XT unified service API</h1>
+    <p class="lead">
+        Seranet Service API is the platform for creating service APIs exposing programable interfaces
+        for corporate IT systems.
+    </p>    
+    <p><a href="./Help" class="btn btn-primary btn-large">See Existing APIs &raquo;</a></p>
 </div>
 <div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>ASP.NET Web API is a framework that makes it easy to build HTTP services that reach
-        a broad range of clients, including browsers and mobile devices. ASP.NET Web API
-        is an ideal platform for building RESTful applications on the .NET Framework.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301870">Learn more &raquo;</a></p>
+    <div class="col-md-6">
+        <h2>Create New APIs</h2>
+        <p>Writing new Seranet APIs are quite straight forward. The codebase is hosted on <a href="https://github.com/ectechno/seranet.api"> github </a>
+        for you to fork on to your own GitHub account. Once cloned, you should be able to run Seranet.Api MVC5 project through VS2013 do modifications to existing APIs. 
+        </p>
+        <p>To create new APIs, add a new Code Library project to the solution having nuget dependency to 'Microsoft.AspNet.WebApi.Core' package. Next add your new
+        project as a dependency to Seranet.Api host project. Now you are ready to add WebApi controllers to your project. These controllers will be
+        automatically pickedup and be deployed by the Seranet.Api host project.</p>
+
+        <p>Once development is complete send your work as a 'Pull Request' to the original 'ectechno' repository.</p>
+        <p><a class="btn btn-default" href="https://github.com/ectechno/seranet.api">Fork me &raquo;</a></p>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301871">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301872">Learn more &raquo;</a></p>
+    <div class="col-md-6">
+        <h2>Using the Service APIs</h2>
+        <p>Seranet Service API is based on REST service model to let developers to easily consume across platforms. 
+        JS SPA is a common usecase for such applications. </p>
     </div>
 </div>
