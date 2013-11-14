@@ -1,7 +1,9 @@
 ﻿using Newtonsoft.Json.Serialization;
+using Seranet.Api.Areas.HelpPage;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web;
 using System.Web.Http;
 using System.Web.Http.Cors;
 
@@ -22,6 +24,8 @@ namespace Seranet.Api
 
             // Web API routes
             config.MapHttpAttributeRoutes();
+
+            config.SetDocumentationProvider(new XmlDocumentationProvider(HttpContext.Current.Server.MapPath("~/bin/Seranet.Api.xml")));
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",

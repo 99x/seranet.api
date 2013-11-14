@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{2DAA7D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seranet.Api.Plugins.Project", "Seranet.Api.Plugins.Project\Seranet.Api.Plugins.Project.csproj", "{96BB116C-5143-403E-BEF5-E7C1F020B870}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seranet.Api.Plugins.Email", "Seranet.Api.Plugins.Email\Seranet.Api.Plugins.Email.csproj", "{1022AD32-6E33-47B6-A312-221E48A7CD44}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +42,10 @@ Global
 		{96BB116C-5143-403E-BEF5-E7C1F020B870}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96BB116C-5143-403E-BEF5-E7C1F020B870}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96BB116C-5143-403E-BEF5-E7C1F020B870}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1022AD32-6E33-47B6-A312-221E48A7CD44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1022AD32-6E33-47B6-A312-221E48A7CD44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1022AD32-6E33-47B6-A312-221E48A7CD44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1022AD32-6E33-47B6-A312-221E48A7CD44}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -31,6 +31,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Seranet.Api.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -194,6 +195,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Seranet.Api.Plugins.Email\Seranet.Api.Plugins.Email.csproj">
+      <Project>{1022ad32-6e33-47b6-a312-221e48a7cd44}</Project>
+      <Name>Seranet.Api.Plugins.Email</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Seranet.Api.Plugins.Employee\Seranet.Api.Plugins.Employee.csproj">
       <Project>{d39e5fc9-878a-45a3-88bc-f8525fd31100}</Project>
       <Name>Seranet.Api.Plugins.Employee</Name>
