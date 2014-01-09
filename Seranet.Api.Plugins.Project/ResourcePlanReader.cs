@@ -27,7 +27,7 @@ namespace Seranet.Api.Plugins.Project
 
             List<Project> projects = new List<Project>();
             LoadProjects(sheet, 0, projects);
-            LoadProjects(sheet, 23, projects);
+            LoadProjects(sheet, 24, projects);
 
             return projects;
         }
@@ -40,19 +40,21 @@ namespace Seranet.Api.Plugins.Project
             for (int col = 1; col < maxColCount; col = col + 2)
             {
 
-                ICell repCell = sheet.GetRow(rowStartIndex).GetCell(col);
-                ICell nameCell = sheet.GetRow(rowStartIndex + 1).GetCell(col);
+                ICell repCell = sheet.GetRow(rowStartIndex + 1).GetCell(col);
+                ICell nameCell = sheet.GetRow(rowStartIndex + 2).GetCell(col);
+                ICell idCell = sheet.GetRow(rowStartIndex).GetCell(col);
 
-                if (GetCellValue(repCell) == null || GetCellValue(nameCell) == null)
+                if (GetCellValue(repCell) == null || GetCellValue(nameCell) == null || GetCellValue(idCell) == null)
                 {
                     continue;
                 }
 
                 Project project = new Project();
+                project.Id = GetCellValue(idCell);
                 project.Name = GetCellValue(nameCell);
                 project.Rep = Regex.Replace(GetCellValue(repCell), @"\s+", "").ToLower();
 
-                for (int row = rowStartIndex + 2; row < rowheight + rowStartIndex; row++)
+                for (int row = rowStartIndex + 3; row < rowheight + rowStartIndex; row++)
                 {
                     IRow rowObj = sheet.GetRow(row);
                     if (rowObj == null)
