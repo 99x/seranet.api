@@ -9,6 +9,7 @@ namespace Seranet.Api.Plugins.Project
 {
     public class ProjectsController: ApiController
     {
+        [Authorize(Users= @"SERANET\hasithy")]
         public IEnumerable<Project> Get()
         {
             string path = System.Environment.GetEnvironmentVariable("SERANET.API.PLUGINS.PROJECT.RESOURCEFILE");
