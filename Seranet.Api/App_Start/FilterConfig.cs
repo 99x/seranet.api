@@ -1,5 +1,6 @@
 ﻿using System.Web;
 using System.Web.Mvc;
+using Seranet.Api.Core;
 
 namespace Seranet.Api
 {

@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json.Serialization;
 using Seranet.Api.Areas.HelpPage;
+using Seranet.Api.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,9 @@ namespace Seranet.Api
     {
         public static void Register(HttpConfiguration config)
         {
+            //Auth filter - See configuration in web.config
+            config.Filters.Add(new SeranetAuthAttribute());
+
             // set webapi JSON formatter
             config.Formatters.XmlFormatter.SupportedMediaTypes.Clear();
             var json = config.Formatters.JsonFormatter;

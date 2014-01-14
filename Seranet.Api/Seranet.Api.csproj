@@ -200,6 +200,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Seranet.Api.Core\Seranet.Api.Core.csproj">
+      <Project>{b8d29d84-8e98-4966-b47d-3727549ef97d}</Project>
+      <Name>Seranet.Api.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Seranet.Api.Plugins.Contacts\Seranet.Api.Plugins.Contacts.csproj">
       <Project>{d6cb95ad-ce77-4d63-a345-b801e8ab06e7}</Project>
       <Name>Seranet.Api.Plugins.Contacts</Name>
