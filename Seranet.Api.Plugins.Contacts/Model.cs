@@ -9,10 +9,21 @@ namespace Seranet.Api.Plugins.Contacts
     {
         public Contact()
         {
-            this.ContactList = new List<ContactItem>();
+            this.ContactAssignment = new List<ContactAssignment>();
         }
 
         public string Organization { get; set; }
+        public List<ContactAssignment> ContactAssignment { get; set; }
+    }
+
+    public class ContactAssignment
+    {
+        public ContactAssignment()
+        {
+            this.ContactList = new List<ContactItem>();
+        }
+
+        public string Assignment { get; set; }
         public List<ContactItem> ContactList { get; set; }
     }
 

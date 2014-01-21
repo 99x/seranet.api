@@ -50,7 +50,7 @@ namespace Seranet.Api.Plugins.Project
                 }
 
                 Project project = new Project();
-                project.Id = GetCellValue(idCell);
+                project.Assignment = GetCellValue(idCell);
                 project.Name = GetCellValue(nameCell);
                 project.Rep = Regex.Replace(GetCellValue(repCell), @"\s+", "").ToLower();
 
