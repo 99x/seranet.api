@@ -85,6 +85,12 @@
     <Content Include="Lib\NPOI.OpenXmlFormats.dll" />
     <Content Include="Lib\NPOI.XML" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Seranet.Api.Core\Seranet.Api.Core.csproj">
+      <Project>{b8d29d84-8e98-4966-b47d-3727549ef97d}</Project>
+      <Name>Seranet.Api.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

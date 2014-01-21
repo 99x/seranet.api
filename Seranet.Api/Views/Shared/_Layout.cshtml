@@ -22,6 +22,9 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
                 </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="navbar-text">Hello, @User.Identity.Name!</li>
+                </ul>
             </div>
         </div>
     </div>
