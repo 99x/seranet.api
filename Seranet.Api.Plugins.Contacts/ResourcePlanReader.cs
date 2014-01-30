@@ -36,45 +36,59 @@ namespace Seranet.Api.Plugins.Contacts
         private void LoadContacts(ISheet sheet, int rowStartIndex, List<Contact> contacts)
         {
             ICell organizationCell = sheet.GetRow(rowStartIndex).GetCell(0);
-            ICell nameCell = sheet.GetRow(rowStartIndex).GetCell(1);
-            ICell emailCell = sheet.GetRow(rowStartIndex).GetCell(2);
-            ICell phoneCell = sheet.GetRow(rowStartIndex).GetCell(3);
-            ICell skypeCell = sheet.GetRow(rowStartIndex).GetCell(4);
+            ICell assignmentCell = sheet.GetRow(rowStartIndex).GetCell(1);
+            ICell nameCell = sheet.GetRow(rowStartIndex).GetCell(2);
+            ICell emailCell = sheet.GetRow(rowStartIndex).GetCell(3);
+            ICell phoneCell = sheet.GetRow(rowStartIndex).GetCell(4);
+            ICell skypeCell = sheet.GetRow(rowStartIndex).GetCell(5);
 
-            while (GetCellValue(nameCell) != null)
+            while (GetCellValue(organizationCell) != null)
             {
                 Contact contact = new Contact();
                 contact.Organization = GetCellValue(organizationCell);
-                while (GetCellValue(nameCell) != null)
+
+                while (GetCellValue(assignmentCell) != null)
                 {
-                    ContactItem contactItem = new ContactItem();
-                    contactItem.Name = GetCellValue(nameCell);
-                    contactItem.Email = GetCellValue(emailCell);
-                    contactItem.Phone = GetCellValue(phoneCell);
-                    contactItem.Skype = GetCellValue(skypeCell);
-                    contact.ContactList.Add(contactItem);
+                    ContactAssignment contactAssignment= new ContactAssignment();
+                    contactAssignment.Assignment = GetCellValue(assignmentCell);
 
-                    rowStartIndex++;
-
-                    IRow rowObj = sheet.GetRow(rowStartIndex);
-                    if (rowObj == null)
+                    while (GetCellValue(nameCell) != null)
                     {
-                        nameCell = null;
-                        break;
+                        ContactItem contactItem = new ContactItem();
+                        contactItem.Name = GetCellValue(nameCell);
+                        contactItem.Email = GetCellValue(emailCell);
+                        contactItem.Phone = GetCellValue(phoneCell);
+                        contactItem.Skype = GetCellValue(skypeCell);
+                        contactAssignment.ContactList.Add(contactItem);
+
+                        rowStartIndex++;
+
+                        IRow rowObj = sheet.GetRow(rowStartIndex);
+                        if (rowObj == null)
+                        {
+                            nameCell = null;
+                            break;
+                        }
+
+                        organizationCell = sheet.GetRow(rowStartIndex).GetCell(0);
+                        assignmentCell = sheet.GetRow(rowStartIndex).GetCell(1);
+                        nameCell = sheet.GetRow(rowStartIndex).GetCell(2);
+                        emailCell = sheet.GetRow(rowStartIndex).GetCell(3);
+                        phoneCell = sheet.GetRow(rowStartIndex).GetCell(4);
+                        skypeCell = sheet.GetRow(rowStartIndex).GetCell(5);
+
+                        if (GetCellValue(assignmentCell) != null)
+                        {
+                            break;
+                        }
                     }
-
-
-                    organizationCell = sheet.GetRow(rowStartIndex).GetCell(0);
-                    nameCell = sheet.GetRow(rowStartIndex).GetCell(1);
-                    emailCell = sheet.GetRow(rowStartIndex).GetCell(2);
-                    phoneCell = sheet.GetRow(rowStartIndex).GetCell(3);
-                    skypeCell = sheet.GetRow(rowStartIndex).GetCell(4);
-
+                    contact.ContactAssignment.Add(contactAssignment);
                     if (GetCellValue(organizationCell) != null)
                     {
                         break;
                     }
                 }
+                
                 contacts.Add(contact);
             }
         }
