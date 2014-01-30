@@ -12,7 +12,7 @@ namespace Seranet.Api.Plugins.Project
         public Project() {
             this.Members = new List<string>();
         }
-        public string Id { get; set; }
+        public string Assignment { get; set; }
         public string Name { get; set; }
         public string Rep { get; set; }
         public List<string> Members { get; set; }

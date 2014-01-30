@@ -27,7 +27,7 @@ namespace Seranet.Api.Plugins.Project
 
             List<Project> projects = new List<Project>();
             LoadProjects(sheet, 0, projects);
-            LoadProjects(sheet, 24, projects);
+            LoadProjects(sheet, 23, projects);
 
             return projects;
         }
@@ -50,7 +50,7 @@ namespace Seranet.Api.Plugins.Project
                 }
 
                 Project project = new Project();
-                project.Id = GetCellValue(idCell);
+                project.Assignment = GetCellValue(idCell);
                 project.Name = GetCellValue(nameCell);
                 project.Rep = Regex.Replace(GetCellValue(repCell), @"\s+", "").ToLower();
 
