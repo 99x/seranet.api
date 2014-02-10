@@ -11,10 +11,11 @@ namespace Seranet.Api.Core
 {
     public class SeranetAuthAttribute : AuthorizeAttribute
     {
+
         public override void OnAuthorization(System.Web.Http.Controllers.HttpActionContext actionContext)
         {
-            if (HttpContext.Current.User.Identity.IsAuthenticated) { 
-                string path = actionContext.Request.RequestUri.LocalPath;
+            if (HttpContext.Current.User.Identity.IsAuthenticated) {
+                string path = actionContext.Request.RequestUri.LocalPath.Substring(actionContext.Request.RequestUri.LocalPath.LastIndexOf("/") + 1);
                 string authorizedUsersString = ConfigurationManager.AppSettings[path.ToLower()];
 
                 if (authorizedUsersString == null)
