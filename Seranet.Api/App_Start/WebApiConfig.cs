@@ -24,7 +24,11 @@ namespace Seranet.Api
             json.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
 
             //enable cross domain requests
-            config.EnableCors(new EnableCorsAttribute("*", "*", "*"));
+            var corsAttr = new EnableCorsAttribute("*", "*", "*");
+            corsAttr.SupportsCredentials = true;
+            config.EnableCors(corsAttr);
+
+
 
             // Web API routes
             config.MapHttpAttributeRoutes();
