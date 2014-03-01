@@ -11,6 +11,7 @@ namespace Seranet.Api.Controllers
         public ActionResult Index()
         {
             //This is test comment
+            //This is second commit
             ViewBag.Title = "Home Page";
             return View();
         }
