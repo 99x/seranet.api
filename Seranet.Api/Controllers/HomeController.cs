@@ -10,7 +10,7 @@ namespace Seranet.Api.Controllers
     {
         public ActionResult Index()
         {
-
+            //This is test comment
             ViewBag.Title = "Home Page";
             return View();
         }
