@@ -123,7 +123,7 @@
 	e.Surname, 
                    e.Email,
 	e.NICNumber,
-	e.hrMobileNo,
+ e.DateOfBirth,	e.hrMobileNo,
 	e.Twitter,
 	e.Facebook,
 	e.LinkedIn,

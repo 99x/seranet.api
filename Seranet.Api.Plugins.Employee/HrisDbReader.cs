@@ -39,10 +39,12 @@ namespace Seranet.Api.Plugins.Employee
             emp.FirstName = reader["FirstName"].ToString();
             emp.LastName = reader["Surname"].ToString();
             emp.NIC = reader["NICNumber"].ToString();
+            emp.DateOfBirth = reader["DateOfBirth"].ToString();
             emp.MobileNumber = reader["hrMobileNo"].ToString();
             emp.TwitterId = reader["Twitter"].ToString();
             emp.FacebookId = reader["Facebook"].ToString();
             emp.LinkedInId = reader["LinkedIn"].ToString();
+            
 
             string email = reader["Email"].ToString();
             if (email.IndexOf("@") > 0)

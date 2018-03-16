@@ -15,6 +15,7 @@ namespace Seranet.Api.Plugins.Employee
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string NIC { get; set; }
+        public string DateOfBirth { get; set; }
         public string MobileNumber { get; set; }
         public string TwitterId { get; set; }
         public string FacebookId { get; set; }
